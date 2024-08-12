@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,13 +19,11 @@ import { MaterialModule } from './material.module';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MaterialModule,
-    ReactiveFormsModule
+    MaterialModule
   ],
-  exports: [ MaterialModule, MatFormFieldModule],
+  exports: [MaterialModule],
   providers: [],
   bootstrap: [AppComponent, UserProfileComponent, UserProfileCardComponent]
 })
