@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgClass, NgFor, NgIf } from "@angular/common";
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import {
   UserProfileCard
@@ -10,7 +8,7 @@ import {
 @Component({
   selector: 'app-user-profile-card',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, NgIf, MatFormFieldModule, MatIconModule, NgClass],
+  imports: [NgFor, NgIf, MatIconModule, NgClass],
   templateUrl: './user-profile-card.component.html',
   styleUrls: ['./user-profile-card.component.scss']
 })
