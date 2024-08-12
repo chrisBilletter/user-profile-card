@@ -1,0 +1,92 @@
+  <div class="user-profile-card" [ngClass]="{ 'edit-user-profile': !viewOnly }">
+    <div class="inner-card-padding">
+      <div class="card-header">
+        <div class="person-icon-wrapper">
+          <h1 class="title">ID</h1>
+          <mat-icon class="person-icon" fontIcon="person"></mat-icon>
+        </div>
+
+        <ng-container *ngIf="viewOnly; else editIcon">
+          <mat-icon (click)="editUserProfileCard()" aria-label="Example home icon" class="edit-save-icon" fontIcon="edit"></mat-icon>
+        </ng-container>
+      </div>
+
+      <div class="user-info-wrapper">
+        <div class="section-wrapper">
+          <h2 class="header-text">Account Information</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 remove-col-padding">
+                <div class="align-content">
+                  <label aria-label="First Name" class="section-label">First Name:</label>
+                    <p class="label-data">{{ userProfileData.firstName }}</p>
+                  </div>
+                <div class="align-content">
+                  <label aria-label="Last Name" class="section-label">Last Name:</label>
+                  <p class="label-data">{{ userProfileData.lastName }}</p>
+                </div>
+              </div>
+
+              <div class="col-lg-6 remove-col-padding">
+                <div class="align-content">
+                  <label aria-label="Email" class="section-label">Registered Email:</label>
+                  <p class="label-data">{{ userProfileData.email }}</p>
+                </div>
+                <div class="align-content">
+                  <label aria-label="Phone Number" class="section-label">Cell Phone Number:</label>
+                  <p class="label-data">{{ userProfileData.phoneNumber }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-wrapper">
+          <h2 class="header-text">Address</h2>
+          <div class="align-content">
+            <label aria-label="Home Address" class="section-label">Home Address:</label>
+            <p class="label-data">{{ userProfileData.address?.homeAddress }}</p>
+          </div>
+          <div class="align-content">
+            <label aria-label="Mailing Address" class="section-label">Mailing Address:</label>
+            <p class="label-data">{{ userProfileData.address?.mailingAddress }}</p>
+          </div>
+        </div>
+
+        <div class="section-wrapper">
+          <h2 class="header-text">Personally Identifiable Information</h2>
+          <div class="align-content">
+            <label aria-label="SSN" class="section-label">Social Security Numbers(SSNs):</label>
+            <p class="label-data">{{ userProfileData.ssn }}</p>
+          </div>
+          <div class="align-content">
+            <label aria-label="Date of Birth" class="section-label">Date of Birth:</label>
+            <p class="label-data">{{ userProfileData.dob }}</p>
+          </div>
+          <div class="align-content">
+            <label aria-label="Medicare Beneficiary Identifier" class="section-label">Medicare Beneficiary Identifiers (MBIs):</label>
+            <p class="label-data">{{ userProfileData.medicareBeneficiaryIdentifier }}</p>
+          </div>
+        </div>
+
+        <div class="section-wrapper">
+          <h2 class="header-text">Documents</h2>
+          <div class="documents-wrapper">
+              <div *ngFor="let doc of userProfileData.documents">
+                <div class="document-padding">
+                  <div class="document">
+                    <mat-icon aria-label="Example home icon" class="document-icon" fontIcon="description"></mat-icon>
+                    <p class="document-name">{{doc.name}}</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #editIcon>
+      <mat-icon (click)="editUserProfileCard()" aria-label="Example home icon" class="edit-save-icon" fontIcon="check"></mat-icon>
+    </ng-template>
+  </div>
+

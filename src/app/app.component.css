@@ -1,0 +1,12 @@
+.main-header {
+  left: 50px;
+  position: relative;
+  top: 50px;
+}
+
+.user-profile-wrapper {
+  max-width: 900px;
+  padding: 40px;
+  width: 100%;
+}
+
